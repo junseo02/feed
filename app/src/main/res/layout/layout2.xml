@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_marginTop="8px"
+  android:orientation="vertical"
+  android:id="@+id/layout2Back">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginHorizontal="16px"
+    android:id="@+id/layout2Group"
+    >
+
+    <ImageView
+      android:layout_width="match_parent"
+      android:layout_height="47px"
+      android:id="@+id/layout2banner"
+      android:src="#D9D9D9"
+      />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/layout2banner"
+      android:layout_marginTop="18px"
+      android:id="@+id/layout2hSeries"
+      >
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="H 시리즈"
+        android:textSize="16dp"
+        android:id="@+id/layout2H"
+        />
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/layout2HButtonGroup1"
+        app:layout_constraintTop_toBottomOf="@id/layout2H"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+          android:layout_width="0px"
+          android:layout_height="0px"
+          app:layout_constraintDimensionRatio="104:76"
+          android:id="@+id/layout2HButton1"
+          android:text="오토존"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toLeftOf="@id/layout2HButton2"
+          app:layout_constraintHorizontal_chainStyle="spread_inside"
+          android:background="@drawable/btn_gray"
+          />
+        <androidx.appcompat.widget.AppCompatButton
+          android:layout_width="0px"
+          android:layout_height="0px"
+          app:layout_constraintDimensionRatio="104:76"
+          android:id="@+id/layout2HButton2"
+          android:text="클린팜"
+          app:layout_constraintLeft_toRightOf="@id/layout2HButton1"
+          app:layout_constraintRight_toLeftOf="@id/layout2HButton3"
+          android:background="@drawable/btn_gray"
+          android:layout_marginHorizontal="8px"
+          />
+        <androidx.appcompat.widget.AppCompatButton
+          android:layout_width="0px"
+          android:layout_height="0px"
+          app:layout_constraintDimensionRatio="104:76"
+          android:id="@+id/layout2HButton3"
+          android:text="헬시에듀"
+          app:layout_constraintLeft_toRightOf="@id/layout2HButton2"
+          app:layout_constraintRight_toRightOf="parent"
+          android:background="@drawable/btn_gray"
+          />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:id="@+id/layout2HButtonGroup2"
+        app:layout_constraintTop_toBottomOf="@id/layout2HButtonGroup1"
+        android:layout_marginTop="8px"
+        >
+        <androidx.appcompat.widget.AppCompatButton
+          android:layout_width="0px"
+          android:layout_height="0px"
+          app:layout_constraintDimensionRatio="104:76"
+          android:id="@+id/layout2HButton4"
+          android:text="위드펫"
+          app:layout_constraintLeft_toLeftOf="parent"
+          app:layout_constraintRight_toLeftOf="@id/layout2HButton5"
+          app:layout_constraintHorizontal_chainStyle="spread_inside"
+          android:background="@drawable/btn_gray"
+          />
+        <androidx.appcompat.widget.AppCompatButton
+          android:layout_width="0px"
+          android:layout_height="0px"
+          app:layout_constraintDimensionRatio="104:76"
+          android:id="@+id/layout2HButton5"
+          android:text="아이숲"
+          app:layout_constraintLeft_toRightOf="@id/layout2HButton4"
+          app:layout_constraintRight_toLeftOf="@id/layout2HButton6"
+          android:background="@drawable/btn_gray"
+          android:layout_marginHorizontal="8px"
+          />
+        <androidx.appcompat.widget.AppCompatButton
+          android:layout_width="0px"
+          android:layout_height="0px"
+          app:layout_constraintDimensionRatio="104:76"
+          android:id="@+id/layout2HButton6"
+          android:text="카밍부스"
+          app:layout_constraintLeft_toRightOf="@id/layout2HButton5"
+          app:layout_constraintRight_toRightOf="parent"
+          android:background="@drawable/btn_gray"
+          />
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/layout2hSeries"
+      android:id="@+id/layout2My"
+      android:layout_marginTop="26px"
+      >
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="나의 예약"
+        android:textSize="16dp"
+        android:id="@+id/layout2MyText"
+        />
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout2MyText"
+        android:background="#EBEBEB"
+        android:paddingHorizontal="4px"
+        android:paddingVertical="6px"
+        android:id="@+id/layout2MyReservation"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="vertical"
+          android:id="@+id/myReservation"
+          app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+          />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      app:layout_constraintTop_toBottomOf="@id/layout2My"
+      android:id="@+id/layout2Community"
+      android:layout_marginTop="18px"
+      >
+
+      <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="커뮤니티 시설"
+        android:textSize="16dp"
+        android:id="@+id/layout2CommunityText"
+        />
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout2CommunityText"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:orientation="horizontal"
+          android:id="@+id/community"
+          app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+
+          />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

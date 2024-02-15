@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    package="com.study.feed">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <application
         android:allowBackup="true"
@@ -23,6 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".layout.Layout1"/>
+        <activity android:name=".layout.Layout2"/>
     </application>
 
 </manifest>

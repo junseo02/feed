@@ -1,16 +1,13 @@
 package com.study.feed
 
-import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.res.Resources
 import android.os.Bundle
-import android.view.View
-import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Button
-import android.widget.TextView
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.study.feed.MainActivity.Companion.responsiveHeight
 import com.study.feed.layout.Layout1
+import com.study.feed.layout.Layout2
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +21,31 @@ class MainActivity : AppCompatActivity() {
 //            }
 //        }
 
+//        fun Int.responsiveHeight(): Int = (this * heightRate * Resources.getSystem().displayMetrics.density).toInt()
+//        fun Int.responsiveWidth(): Int = (this * widthRate * Resources.getSystem().displayMetrics.density).toInt()
+
+        fun Int.responsiveHeight(): Int {
+            println("==============HEIGHT START==============")
+            println(this)
+            println(heightRate)
+//            println(Resources.getSystem().displayMetrics.density)
+            println(this * heightRate)
+            println((this * heightRate).toInt())
+            println("============== HEIGHT END ==============")
+
+            return (this * heightRate).toInt()
+        }
+        fun Int.responsiveWidth(): Int {
+            println("==============WIDTH START==============")
+            println(this)
+            println(widthRate)
+//            println(Resources.getSystem().displayMetrics.density)
+            println(this * widthRate)
+            println((this * widthRate).toInt())
+            println("============== WIDTH END ==============")
+
+            return (this * widthRate).toInt()
+        }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -50,6 +72,12 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, Layout1::class.java)
             startActivity(intent)
         }
+
+        val layoutButton2 : Button = findViewById(R.id.layoutButton2)
+        layoutButton2.setOnClickListener {
+            val intent = Intent(this, Layout2::class.java)
+            startActivity(intent)
+        }
     }
 
     fun devicePx(px: Float, widthOrHeight: String): Float {
@@ -66,12 +94,6 @@ class MainActivity : AppCompatActivity() {
         } else {
             px * heightRate
         }
-        println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
-        println(deviceWidth)
-        println(widthRate)
-        println(deviceDensity)
-        println(returnPx)
-        println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
         return returnPx
     }
 }
