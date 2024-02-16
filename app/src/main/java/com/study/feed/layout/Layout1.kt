@@ -6,61 +6,53 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.marginLeft
-import androidx.core.view.setMargins
-import androidx.core.view.setPadding
 import androidx.recyclerview.widget.RecyclerView
-import com.study.feed.MainActivity
+import com.study.feed.MainActivity.Companion.responsiveHeight
+import com.study.feed.MainActivity.Companion.responsiveWidth
 import com.study.feed.R
 
 class Layout1: AppCompatActivity() {
 
-  lateinit var imageRecyclerView: RecyclerView
-  lateinit var imageAdapter: ImageAdapter
-  var imageData = ArrayList<ImageVo>()
+  private lateinit var imageRecyclerView: RecyclerView
+  private lateinit var imageAdapter: ImageAdapter
+  private var imageData = ArrayList<ImageVo>()
 
-  fun setSize() {
+  private fun setSize() {
 
     val layout1 = findViewById<ConstraintLayout>(R.id.layout1)
     val layout1LayoutParams = layout1.layoutParams as FrameLayout.LayoutParams
-    layout1LayoutParams.setMargins(0, (MainActivity.heightRate * 48).toInt(),0,0)
+    layout1LayoutParams.setMargins(0, 48.responsiveHeight(),0,0)
     layout1.layoutParams = layout1LayoutParams
 
     val title1 = findViewById<ConstraintLayout>(R.id.title1)
     val title1LayoutParams = title1.layoutParams as ConstraintLayout.LayoutParams
-    title1LayoutParams.setMargins(
-      (MainActivity.widthRate * 16).toInt(),0,
-      (MainActivity.widthRate * 16).toInt(),0)
+    title1LayoutParams.setMargins(16.responsiveWidth(),0, 16.responsiveWidth(),0)
     title1.layoutParams = title1LayoutParams
-
-    // text size?
 
     // 가로 새로 비율 1:1
     val image1 = findViewById<ImageView>(R.id.image1)
-    image1.layoutParams.width = (MainActivity.widthRate * 160).toInt()
+    image1.layoutParams.width = 160.responsiveWidth()
     val image2 = findViewById<ImageView>(R.id.image2)
-    image2.layoutParams.width = (MainActivity.widthRate * 160).toInt()
+    image2.layoutParams.width = 160.responsiveWidth()
     val image3 = findViewById<ImageView>(R.id.image3)
-    image3.layoutParams.width = (MainActivity.widthRate * 160).toInt()
+    image3.layoutParams.width = 160.responsiveWidth()
     val image4 = findViewById<ImageView>(R.id.image4)
-    image4.layoutParams.width = (MainActivity.widthRate * 160).toInt()
+    image4.layoutParams.width = 160.responsiveWidth()
 
-    //8h.w.
     val title2 = findViewById<ConstraintLayout>(R.id.title2)
     val title2LayoutParams = title2.layoutParams as ConstraintLayout.LayoutParams
-    title2LayoutParams.setMargins(0, (MainActivity.heightRate * 16).toInt(),0,0)
+    title2LayoutParams.setMargins(0, 16.responsiveHeight(),0,0)
     title2.layoutParams = title2LayoutParams
 
-
     val title2Text = findViewById<TextView>(R.id.title2Text)
-    title2Text.setPadding((MainActivity.widthRate * 16).toInt(), 0, (MainActivity.widthRate * 16).toInt(), 0)
+    title2Text.setPadding(16.responsiveWidth(), 0, 16.responsiveWidth(), 0)
 
     val imageBox2 = findViewById<ConstraintLayout>(R.id.imageBox2)
-    imageBox2.setPadding(0, (MainActivity.heightRate * 16).toInt(), 0, (MainActivity.heightRate * 16).toInt())
+    imageBox2.setPadding(0, 16.responsiveHeight(), 0, 16.responsiveHeight())
 
     val imageSlide = findViewById<RecyclerView>(R.id.imageSlide)
     val imageSlideLayoutParams = imageSlide.layoutParams as ConstraintLayout.LayoutParams
-    imageSlideLayoutParams.setMargins((MainActivity.widthRate * 16).toInt(), 0, 0, 0)
+    imageSlideLayoutParams.setMargins(16.responsiveWidth(), 0, 0, 0)
     imageSlide.layoutParams = imageSlideLayoutParams
 
   }
@@ -70,10 +62,6 @@ class Layout1: AppCompatActivity() {
     setContentView(R.layout.layout1)
 
     setSize()
-
-
-
-
 
     val imageVo1 = ImageVo("image", "1")
     imageData.add(imageVo1)

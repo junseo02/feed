@@ -6,9 +6,6 @@ import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.AppCompatButton
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.marginLeft
-import androidx.core.view.marginRight
-import androidx.core.view.marginTop
 import androidx.recyclerview.widget.RecyclerView
 import com.study.feed.MainActivity.Companion.responsiveHeight
 import com.study.feed.MainActivity.Companion.responsiveWidth
@@ -16,7 +13,7 @@ import com.study.feed.R
 
 class Layout2: AppCompatActivity() {
 
-  fun setSize() {
+  private fun setSize() {
 
     val layout2Back = findViewById<ConstraintLayout>(R.id.layout2Back)
     val layout2BackLayoutParams = layout2Back.layoutParams as FrameLayout.LayoutParams
@@ -67,7 +64,7 @@ class Layout2: AppCompatActivity() {
 
 
     // 나의예약 리사이클뷰
-    var myReservationList = ArrayList<MyReservationVo>()
+    val myReservationList = ArrayList<MyReservationVo>()
 
     val myReservationVo1 = MyReservationVo("11.23","필라테스 수업 - A룸","오후 12:00")
     myReservationList.add(myReservationVo1)
@@ -81,7 +78,6 @@ class Layout2: AppCompatActivity() {
 
     val myReservationAdapter: MyReservationAdapter = MyReservationAdapter(this, myReservationList)
     myReservation.adapter = myReservationAdapter
-
 
 
     // 커뮤니티 리사이클뷰

@@ -7,7 +7,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.study.feed.MainActivity
+import com.study.feed.MainActivity.Companion.responsiveHeight
+import com.study.feed.MainActivity.Companion.responsiveWidth
 import com.study.feed.R
 
 class MyReservationAdapter(val context: Context, private var reservation: ArrayList<MyReservationVo>):RecyclerView.Adapter<MyReservationAdapter.ViewHolder>() {
@@ -17,35 +18,31 @@ class MyReservationAdapter(val context: Context, private var reservation: ArrayL
   }
 
   inner class ViewHolder(view: View?): RecyclerView.ViewHolder(view!!) {
-    private var reservationDate = view?.findViewById<TextView>(R.id.reservationDate)
-    private var reservationTitle = view?.findViewById<TextView>(R.id.reservationTitle)
-    private var reservationTime = view?.findViewById<TextView>(R.id.reservationTime)
+    var reservationDate = view?.findViewById<TextView>(R.id.reservationDate)
+    var reservationTitle = view?.findViewById<TextView>(R.id.reservationTitle)
+    var reservationTime = view?.findViewById<TextView>(R.id.reservationTime)
 
     val reservationTitleLayoutParams = reservationTitle?.layoutParams as ConstraintLayout.LayoutParams
     val reservationTimeLayoutParams = reservationTime?.layoutParams as ConstraintLayout.LayoutParams
-
 
     fun bind(myReservationVo: MyReservationVo, context: Context) {
       reservationDate?.text = myReservationVo.reservationDate
       reservationTitle?.text = myReservationVo.reservationTitle
       reservationTime?.text = myReservationVo.reservationTime
-
-      reservationDate?.width = (MainActivity.widthRate * 67).toInt()
-      reservationDate?.height = (MainActivity.heightRate * 32).toInt()
-      reservationTitle?.width = (MainActivity.widthRate * 185).toInt()
-      reservationTitle?.height = (MainActivity.heightRate * 32).toInt()
-      reservationTitleLayoutParams.setMargins((MainActivity.widthRate * 9).toInt(), 0, 0, 0)
-
-      reservationTime?.width = (MainActivity.widthRate * 59).toInt()
-      reservationTime?.height = (MainActivity.heightRate * 32).toInt()
-      reservationTimeLayoutParams.setMargins(0, 0, (MainActivity.widthRate * 4).toInt(), 0)
-
-
     }
 
   }
 
   override fun onBindViewHolder(holder: MyReservationAdapter.ViewHolder, position: Int) {
+    holder.reservationDate?.layoutParams?.width = 67.responsiveWidth()
+    holder.reservationDate?.layoutParams?.height = 32.responsiveHeight()
+    holder.reservationTitle?.layoutParams?.width = 185.responsiveWidth()
+    holder.reservationTitle?.layoutParams?.height = 32.responsiveHeight()
+    holder.reservationTitleLayoutParams.setMargins(9.responsiveWidth(), 0, 0, 0)
+
+    holder.reservationTime?.layoutParams?.width = 59.responsiveWidth()
+    holder.reservationTime?.layoutParams?.height = 32.responsiveHeight()
+    holder.reservationTimeLayoutParams.setMargins(0, 0, 4.responsiveWidth(), 0)
     holder.bind(reservation[position], context)
   }
 

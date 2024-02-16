@@ -1,14 +1,12 @@
 package com.study.feed.layout
 
 import android.content.Context
-import android.content.res.Resources
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatButton
-import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
-import com.study.feed.MainActivity
+import com.study.feed.MainActivity.Companion.responsiveWidth
 import com.study.feed.R
 
 class CommunityAdapter(val context: Context, private val communityList: ArrayList<CommunityVo>):RecyclerView.Adapter<CommunityAdapter.ViewHolder>() {
@@ -27,8 +25,8 @@ class CommunityAdapter(val context: Context, private val communityList: ArrayLis
 
   override fun onBindViewHolder(holder: CommunityAdapter.ViewHolder, position: Int) {
     val constraintLayout = holder.itemView.layoutParams
-    constraintLayout.width = (MainActivity.widthRate * 130).toInt()
-    constraintLayout.height = (MainActivity.widthRate * 138).toInt()
+    constraintLayout.width = 130.responsiveWidth()
+    constraintLayout.height = 138.responsiveWidth()
 
     holder.bind(communityList[position], context)
   }
