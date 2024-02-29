@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:orientation="vertical"
+  android:paddingHorizontal="14px"
+  android:paddingTop="15px"
+  android:paddingBottom="12px"
+  android:layout_marginTop="8px"
+  android:background="#F5F5F5"
+  android:id="@+id/viewFeedItem"
+  >
+
+  <androidx.viewpager2.widget.ViewPager2
+    android:layout_width="match_parent"
+    android:layout_height="152px"
+    android:orientation="horizontal"
+    android:id="@+id/viewFeedItemImage"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    />
+
+  <LinearLayout
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center"
+    app:layout_constraintBottom_toBottomOf="@id/viewFeedItemImage"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginBottom="8dp"
+    android:id="@+id/indicator"
+    />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/viewFeedItemIconGroup"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    app:layout_constraintTop_toBottomOf="@id/viewFeedItemImage"
+    tools:layout_editor_absoluteX="5dp">
+
+    <ImageButton
+      android:id="@+id/viewFeedItemHeart"
+      style="?android:attr/borderlessButtonStyle"
+      android:layout_width="30px"
+      android:layout_height="30px"
+      android:src="@drawable/heart"
+      app:layout_constraintDimensionRatio="1:1"
+      app:layout_constraintRight_toLeftOf="@id/viewFeedItemExport" />
+
+    <ImageButton
+      android:id="@+id/viewFeedItemExport"
+      style="?android:attr/borderlessButtonStyle"
+      android:layout_width="30px"
+      android:layout_height="30px"
+      android:src="@drawable/vector"
+      app:layout_constraintDimensionRatio="1:1"
+      app:layout_constraintRight_toRightOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/viewFeedItemText"
+    app:layout_constraintTop_toBottomOf="@id/viewFeedItemIconGroup"
+    android:text="가나다라마바사아자차카타파하\n아야어여오요우유으이\n!@#$%^*("
+    android:textColor="@color/black"
+
+    android:maxLines="3"
+    android:ellipsize="end"
+    />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

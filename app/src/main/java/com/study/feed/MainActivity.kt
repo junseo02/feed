@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.study.feed.feed.ViewFeed
 import com.study.feed.layout.Layout1
 import com.study.feed.layout.Layout2
 
@@ -38,6 +39,12 @@ class MainActivity : AppCompatActivity() {
         val layoutButton2 : Button = findViewById(R.id.layoutButton2)
         layoutButton2.setOnClickListener {
             val intent = Intent(this, Layout2::class.java)
+            startActivity(intent)
+        }
+
+        val feedButton : Button = findViewById(R.id.feedButton)
+        feedButton.setOnClickListener {
+            val intent = Intent(this, ViewFeed::class.java)
             startActivity(intent)
         }
     }

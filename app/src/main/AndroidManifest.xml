@@ -23,6 +23,8 @@
         </activity>
         <activity android:name=".layout.Layout1"/>
         <activity android:name=".layout.Layout2"/>
+        <activity android:name=".feed.ViewFeed"/>
+        <activity android:name=".feed.Post"/>
     </application>
 
 </manifest>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+  android:id="@+id/commentItem"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  >
+
+  <TextView
+    android:id="@+id/userId"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    app:layout_constraintTop_toTopOf="parent"
+    android:textStyle="bold"
+    android:textColor="@color/black"
+    android:text="userId"
+    />
+
+  <TextView
+    android:id="@+id/parentComment"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    app:layout_constraintTop_toBottomOf="@id/userId"
+    android:textColor="@color/black"
+    android:text="parentComment"
+    />
+
+  <androidx.recyclerview.widget.RecyclerView
+    android:id="@+id/childCommentList"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/parentComment"
+    android:layout_marginLeft="40dp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
