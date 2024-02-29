@@ -108,8 +108,27 @@ class ViewFeedAdapter(val context: Context, private val viewFeedList: ArrayList<
         textView?.text = moreText
 
         textView?.setOnClickListener {
-          textView.text = viewFeedVo.originalText
-          textView.maxLines = 100
+          if (textView.text.indexOf("더보기") != -1) {
+            textView.text = viewFeedVo.originalText
+            textView.maxLines = 100
+          } else {
+            val intent = Intent(context, Post::class.java)
+
+            intent.putExtra("originalText", viewFeedVo.originalText)
+            intent.putExtra("viewText", viewFeedVo.viewText)
+
+            val itemImageList:ArrayList<String> = ArrayList()
+            for (i:Int in 0 until viewFeedVo.viewFeedItemImageList.size) {
+              itemImageList.add(viewFeedVo.viewFeedItemImageList[i].image)
+            }
+            intent.putExtra("viewFeedItemImageList", itemImageList)
+
+            intent.putExtra("viewFeedItemExport", viewFeedVo.viewFeedItemExport)
+            intent.putExtra("viewFeedItemHeart", viewFeedVo.viewFeedItemHeart)
+
+
+            ContextCompat.startActivity(context, intent, null)
+          }
         }
       } else {
         textView?.text = viewFeedVo.viewText
