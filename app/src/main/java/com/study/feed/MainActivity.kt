@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.study.feed.feed.AddPost
 import com.study.feed.feed.ViewFeed
 import com.study.feed.layout.Layout1
 import com.study.feed.layout.Layout2
@@ -45,6 +46,12 @@ class MainActivity : AppCompatActivity() {
         val feedButton : Button = findViewById(R.id.feedButton)
         feedButton.setOnClickListener {
             val intent = Intent(this, ViewFeed::class.java)
+            startActivity(intent)
+        }
+
+        val addPostButton : Button = findViewById(R.id.addPostButton)
+        addPostButton.setOnClickListener {
+            val intent = Intent(this, AddPost::class.java)
             startActivity(intent)
         }
     }

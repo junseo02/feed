@@ -25,6 +25,7 @@
         <activity android:name=".layout.Layout2"/>
         <activity android:name=".feed.ViewFeed"/>
         <activity android:name=".feed.Post"/>
+        <activity android:name=".feed.AddPost"/>
     </application>
 
 </manifest>
